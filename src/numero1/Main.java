@@ -34,7 +34,7 @@ public class Main {
 			try {
 				System.out.println("Inserisci il numero da aggiungere");
 				nuovoValore = scan.nextInt();
-			}  catch(InputMismatchException e) {
+			} catch(InputMismatchException e) {
 				System.out.println("Il formato del numero non è valido.");
 				System.exit(0);
 			}
@@ -49,7 +49,11 @@ public class Main {
 				System.out.println(Arrays.toString(valori));
 			} catch(ArrayIndexOutOfBoundsException e) {
 				System.out.println("L'indice inserito supera il numero massimo di valori dell'array.");
+			} catch(InputMismatchException e) {
+				System.out.println("Il formato dell'indice non è valido.");
+				System.exit(0);
 			}
+			
 		} while(nuovoValore != 0);
 
 	}

@@ -10,18 +10,15 @@ public class ContoOnline extends ContoCorrente {
 	}
 
 	void stampaSaldo() {
-
 		System.out.println("Titolare: " + titolare + " - Saldo: " + saldo + " - Num movimenti: " + nMovimenti
 				+ " - Massimo movimenti: " + maxMovimenti + " - Massimo prelievo possibile: " + maxPrelievo);
 	}
 
 	void preleva(double x) throws BancaException {
-		if (x > maxPrelievo) {
-			throw new BancaException("Il prelievo non è disponibile");
+		if (x <= maxPrelievo) {
+			super.preleva(x);
 		} else {
-			if (x <= maxPrelievo) {
-				super.preleva(x);
-			}
+			throw new BancaException("Il prelievo non è disponibile");
 		}
 	}
 	
