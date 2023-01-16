@@ -20,7 +20,7 @@ public class Main {
 	
 	public static void generaArray() {
 		for(int i = 0; i < valori.length; i++) {
-			valori[i] = numeroRandom.nextInt(1, 11);
+			valori[i] = numeroRandom.nextInt(11);
 		}
 		
 		System.out.println("Array iniziale");
@@ -34,6 +34,10 @@ public class Main {
 			try {
 				System.out.println("Inserisci il numero da aggiungere");
 				nuovoValore = scan.nextInt();
+				if(nuovoValore == 0) {
+					scan.close();
+					break;
+				}
 			} catch(InputMismatchException e) {
 				System.out.println("Il formato del numero non è valido.");
 				System.exit(0);
